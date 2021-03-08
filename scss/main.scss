@@ -1,0 +1,46 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.header{
+    height: 4rem;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer{
+    height: 4rem;
+}
+
+.image-container {
+    height: 100%;
+    width: 100%;    
+}
+
+.text-container {
+    height: 100%;
+    width: 100%;   
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    float: right;
+}
