@@ -41,19 +41,18 @@ async function productPage() {
     };
 
     let cart = [];
-
-
+    
     button.addEventListener('click', function (event) {
         event.preventDefault();
         if (localStorage.getItem("panier")) {
             let parse = JSON.parse(localStorage.getItem("panier"));
             for (let item of cart) {
                 if (item._id === product._id) {
-                    item.quantity++
+                    item.quantity++;
+                    console.log(item.quantity);
                 }
             }
-            parse.push(product);
-            localStorage.panier = JSON.stringify(parse);
+            localStorage.setItem("panier", JSON.stringify(cart));
             alert("Votre produit ajouté");
         } else {
             cart.push(product);
