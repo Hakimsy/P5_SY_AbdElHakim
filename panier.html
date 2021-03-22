@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier</title>
+</head>
+
+<body>
+    <section id="cart" class="container cart">
+        <h1 class="cart--title">Finalisation de votre commande</h1>
+        <h2>Votre panier</h2>
+        <div id="cartTable">
+            <table class="cart--table">
+                <thead>
+                    <tr>
+                        <th>Ourson</th>
+                        <th>Couleur</th>
+                        <th>Quantité</th>
+                        <th>Prix</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cartTableBody">
+                    <tr>
+                        <td class="ourson"></td>
+                        <td class="color-check"></td>
+                        <td class="quantity-check"></td>
+                        <td class="price-check"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total de la commande</td>
+                        <td id="cartTableTotalPrice"></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+
+
+    <h2>Vos coordonnées</h2>
+    <p><em>Tous les champs sont obligatoires</em></p>
+    <form class="cart--form">
+        <p>
+            <label for="firstname">Prénom</label>
+            <input type="text" name="firstname" id="firstname" required>
+        </p>
+        <p>
+            <label for="lastname">Nom</label>
+            <input type="text" name="lastname" id="lastname" required>
+        </p>
+        <p>
+            <label for="address">Adresse</label>
+            <input type="text" name="address" id="address" required>
+        </p>
+        <p>
+            <label for="city">Ville</label>
+            <input type="text" name="city" id="city" required>
+        </p>
+        <p>
+            <label for="email">e-mail</label>
+            <input type="email" name="email" id="email" required>
+        </p>
+        <input type="hidden" name="products" id="products" value="#">
+        <button type="submit" id="purchase-btn">Passer la commande</button>
+    </form>
+
+    <script src="panier.js"></script>
+</body>
+
+</html>

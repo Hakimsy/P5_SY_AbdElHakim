@@ -6,9 +6,33 @@ body {
   padding: 0;
 }
 
+.minicontainer {
+    max-width: 400px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.beardiv {
+// max-width: 3rem;
+// max-height: 3rem;
+}
+
+.textcontainer {
+width: 16rem;
+}
+
+.bearimg {
+max-width: 10rem;
+max-height: 10rem;
+}
+
 .page-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 70%;
@@ -39,8 +63,8 @@ body {
     width: 100%;   
 }
 
-img{
-    height: 100%;
-    width: 100%;
-    float: right;
-}
+// img{
+//     height: 100%;
+//     width: 100%;
+//     float: right;
+// }
