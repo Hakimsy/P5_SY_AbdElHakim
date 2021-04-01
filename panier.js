@@ -1,28 +1,41 @@
 let cart = JSON.parse(localStorage.getItem('panier'));
+let prixtotal = document.querySelector('#cartTableTotalPrice');
+
+let totalOurs = 0;
 let total = 0;
+
 let content;
 
 for (let item of cart) {
-    let ourson = document.createElement('tr');
-    let entete = document.querySelector('#cartTableBody');
-    let couleur = document.createElement('td');
-    let quantite = document.createElement('td');
-    let prix = document.createElement('td');
-    let lastEl = document.createElement('td');
-    let prixtotal = document.querySelector('#cartTableTotalPrice');
+    let entete = document.querySelector('#cartTable');
 
-    total = parseInt(item.price) * parseInt(item.quantity);
-    prixtotal.innerText = total;
-    ourson.innerText = item.name;
-    couleur.innerText = item.color;
-    quantite.innerText = item.quantity;
-    prix.innerText = item.price;
-    lastEl.innerHTML = `<i class="fa fa-trash"></i>`;
-    
+    let ourson = document.createElement('div');
+    ourson.classList.add('ourson');
+
+    let couleur = document.createElement('p');
+    let name = document.createElement('h3');
+    let quantite = document.createElement('p');
+    let prix = document.createElement('p');
+    totalOurs = parseInt(item.price) * parseInt(item.quantity);
+    totalOurs = (Math.round(totalOurs) / 100).toFixed(2);
+    name.innerText = `${item.name}`;
+    couleur.innerText = `Couleur : ${item.color}`;
+    quantite.innerText = `Quantité : ${item.quantity}`;
+    prix.innerText = `Prix total : ${totalOurs} €` ;
+
+
 
     entete.append(ourson);
-    ourson.append(couleur, quantite, prix, lastEl);
+    ourson.append(name, prix, quantite, couleur);
+};
+
+for (let i = 0; i < cart.length; i++) {
+    total += cart[i].price * cart[i].quantity;
 }
+
+total = (Math.round(total) / 100).toFixed(2);
+prixtotal.innerText = `${total} €`;
+
 
 let purchaseBtn = document.querySelector('#purchase-btn');
 
@@ -62,6 +75,15 @@ purchaseBtn.addEventListener('click', function () {
     })();
 
 });
+
+// function removeItem() {
+//     for (let i = 0; i < cart.length; i++) {
+//         let cart = JSON.parse(cart[i]);
+//         if (cart._id == 3) {
+//             cart.splice(i, 1);
+//         }
+//     }
+// };
 
 
 

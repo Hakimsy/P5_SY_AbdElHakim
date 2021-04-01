@@ -1,7 +1,7 @@
 async function displayData() {
     let data = await getData();
 
-    const main = document.querySelector('main');
+    const main = document.querySelector('.main');
 
     for (let i = 0; i < data.length; i++) {
         let cadre = document.createElement('div');
@@ -18,12 +18,10 @@ async function displayData() {
 
         let bearname = document.createElement('h2');
         let prix = document.createElement('h4');
-        let description = document.createElement('p');
         let lienprod = document.createElement('a');
 
         let vraiprix = (Math.round(data[i].price) / 100).toFixed(2);
 
-        description.innerText = data[i].description;
         image.src = data[i].imageUrl;
         bearname.innerText = data[i].name;
         prix.innerText = vraiprix + " €";
@@ -33,7 +31,7 @@ async function displayData() {
         main.append(cadre);
         cadre.append(leftDiv, rightDiv);
         leftDiv.append(image);
-        rightDiv.append(bearname, prix, description, lienprod);
+        rightDiv.append(bearname, prix, lienprod);
 
     }
 

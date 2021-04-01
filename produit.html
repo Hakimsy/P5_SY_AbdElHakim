@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Product page</title>
 </head>
 
@@ -14,44 +15,49 @@
     <div class="page-container">
 
         <div class="header">
-
+            <a href="index.html"> Accueil </a>
+            <h1>Orinoco</h1>
+            <a href="panier.html"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
         </div>
 
-        <main>
-            <div class="main-container">
-                <div class="image-container">
+        <div class="main-container">
+            <div class="image-container">
 
-                    <img src="" alt="" id="image-produit">
-
-                </div>
-
-                <div class="text-container">
-
-                    <h2 id="nom-produit" value="name"> </h2>
-
-                    <h4 id="prix-produit" value="price"> </h4>
-
-                    <p id="description-produit"> </p>
-
-                    <label for="quantite-produit">Quantité: </label>
-
-                    <input type="number" name="quantite" id="quantiteourson" min="1">
-
-                    <label for="choix-couleur" id="label-couleur"> Choisissez votre couleur :</label>
-
-                    <select name="couleurs" id="selection-couleur"></select>
-                    <form>
-                        <button class="ajout"> Ajouter au panier</button>
-                    </form>
-
-
-                </div>
-            </div>
-            <div class="footer">
+                <img src="" alt="" id="image-produit">
 
             </div>
 
-        </main>
+            <div class="text-container">
+
+                <h2 id="nom-produit" value="name"> </h2>
+
+                <h3 id="prix-produit" value="price"> </h3>
+
+                <p id="description-produit"> </p>
+
+                <label for="quantite-produit">Quantité: </label> 
+
+                <input type="number" name="quantite" id="quantiteourson" min="1"> <br>
+
+                <label for="choix-couleur" id="label-couleur"> Choisissez votre couleur :</label>
+
+                <select name="couleurs" id="selection-couleur"></select> <br>
+                <form class="add-produit">
+                    <button class="ajout"> Ajouter au panier</button>
+                </form>
+
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="social-icons">
+                <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-facebook fa-2x"></i>
+                <i class="fa fa-instagram fa-2x"></i>
+                <i class="fa fa-pinterest fa-2x"></i>
+            </div>
+        </div>
 
     </div>
 

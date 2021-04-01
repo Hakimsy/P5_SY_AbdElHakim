@@ -5,70 +5,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Panier</title>
 </head>
 
 <body>
-    <section id="cart" class="container cart">
-        <h1 class="cart--title">Finalisation de votre commande</h1>
-        <div id="cartTable">
+    <div class="page-container">
+
+        <div class="header">
+            <a href="index.html"> Accueil </a>
+            <h1>Orinoco</h1>
+            <a href="panier.html"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
+        </div>
+
+        <section id="cart" class="container cart">
+            <h2 class="panier-titre">Votre panier</h2>
+            <div id="cartTable">
+
+            </div>
             <table class="cart--table">
-                <thead>
-                    <tr>
-                        <th>Ourson</th>
-                        <th>Couleur</th>
-                        <th>Quantité</th>
-                        <th>Prix</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="cartTableBody">
-                    <tr>
-                        <td class="ourson"></td>
-                        <td class="color-check"></td>
-                        <td class="quantity-check"></td>
-                        <td class="price-check"></td>
-                    </tr>
-                </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="3">Total de la commande</td>
+                        <td colspan="3">Total de votre panier: </td>
                         <td id="cartTableTotalPrice"></td>
                         <td></td>
                     </tr>
                 </tfoot>
             </table>
+        </section>
+
+        <div class="form-contact">
+            <h2>Vos coordonnées</h2>
+            <p><em>Tous les champs sont obligatoires</em></p>
+
+
+            <form class="cart--form">
+                <p>
+                    <label for="firstname">Prénom</label>
+                    <input type="text" name="firstname" id="firstname" required>
+                </p>
+                <p>
+                    <label for="lastname">Nom</label>
+                    <input type="text" name="lastname" id="lastname" required>
+                </p>
+                <p>
+                    <label for="address">Adresse</label>
+                    <input type="text" name="address" id="address" required>
+                </p>
+                <p>
+                    <label for="city">Ville</label>
+                    <input type="text" name="city" id="city" required>
+                </p>
+                <p>
+                    <label for="email">e-mail</label>
+                    <input type="email" name="email" id="email" required>
+                </p>
+                <input type="hidden" name="products" id="products" value="#">
+                <button type="submit" id="purchase-btn">Passer la commande</button>
+            </form>
         </div>
-    </section>
 
-
-    <h2>Vos coordonnées</h2>
-    <p><em>Tous les champs sont obligatoires</em></p>
-    <form class="cart--form">
-        <p>
-            <label for="firstname">Prénom</label>
-            <input type="text" name="firstname" id="firstname" required>
-        </p>
-        <p>
-            <label for="lastname">Nom</label>
-            <input type="text" name="lastname" id="lastname" required>
-        </p>
-        <p>
-            <label for="address">Adresse</label>
-            <input type="text" name="address" id="address" required>
-        </p>
-        <p>
-            <label for="city">Ville</label>
-            <input type="text" name="city" id="city" required>
-        </p>
-        <p>
-            <label for="email">e-mail</label>
-            <input type="email" name="email" id="email" required>
-        </p>
-        <input type="hidden" name="products" id="products" value="#">
-        <button type="submit" id="purchase-btn">Passer la commande</button>
-    </form>
+        <div class="footer">
+            <div class="social-icons">
+                <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-facebook fa-2x"></i>
+                <i class="fa fa-instagram fa-2x"></i>
+                <i class="fa fa-pinterest fa-2x"></i>
+            </div>
+        </div>
+    </div>
 
     <script src="panier.js"></script>
 </body>
