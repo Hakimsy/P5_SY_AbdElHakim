@@ -19,50 +19,64 @@
             <a href="panier.html"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
         </div>
 
-        <section id="cart" class="container cart">
-            <h2 class="panier-titre">Votre panier</h2>
-            <div id="cartTable">
+        <section id="cart">
+            <!-- <h2 class="panier-titre">Votre panier</h2>
+            <div id="elements">
 
             </div>
-            <table class="cart--table">
-                <tfoot>
-                    <tr>
-                        <td colspan="3">Total de votre panier: </td>
-                        <td id="cartTableTotalPrice"></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
-            </table>
+            <h3 id="prix-total"></h3> -->
         </section>
 
-        <div class="form-contact">
-            <h2>Vos coordonnées</h2>
-            <p><em>Tous les champs sont obligatoires</em></p>
+        <div class="container">
+            <h2 id="coordonnees">Vos coordonnées</h2>
+            <p><em>Veuillez remplir les champs</em></p>
 
 
-            <form class="cart--form">
-                <p>
-                    <label for="firstname">Prénom</label>
-                    <input type="text" name="firstname" id="firstname" required>
-                </p>
-                <p>
-                    <label for="lastname">Nom</label>
-                    <input type="text" name="lastname" id="lastname" required>
-                </p>
-                <p>
-                    <label for="address">Adresse</label>
-                    <input type="text" name="address" id="address" required>
-                </p>
-                <p>
-                    <label for="city">Ville</label>
-                    <input type="text" name="city" id="city" required>
-                </p>
-                <p>
-                    <label for="email">e-mail</label>
-                    <input type="email" name="email" id="email" required>
-                </p>
-                <input type="hidden" name="products" id="products" value="#">
-                <button type="submit" id="purchase-btn">Passer la commande</button>
+            <form id="form_id">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="firstname">Prénom</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="firstname" id="firstname" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lastname">Nom</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="lastname" id="lastname" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="address">Adresse</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="address" id="address" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="city">Ville</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="city" id="city" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                </div>
+                <div id="btn-container">
+                    <input type="hidden" name="products" id="products" value="#">
+                    <button type="submit" id="purchase-btn">Passer la commande</button>
+                </div>
             </form>
         </div>
 
