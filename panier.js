@@ -1,6 +1,7 @@
 let purchaseBtn = document.querySelector('#purchase-btn');
 let yourCart = document.getElementById('cart');
-let form = document.getElementsByTagName('form');
+let form = document.getElementsByTagName('form')[0];
+let informations = document.querySelector('.container');
 
 if (localStorage.getItem('panier') !== null) {
 
@@ -21,7 +22,7 @@ if (localStorage.getItem('panier') !== null) {
     let totalOurs = 0;
     let total = 0;
 
-    let content;
+    // let content;
 
     for (let item of cart) {
         let entete = document.querySelector('#elements');
@@ -56,9 +57,8 @@ if (localStorage.getItem('panier') !== null) {
 
     let products = [];
 
-    purchaseBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-
+    purchaseBtn.addEventListener('click', function () {
+    
         let contact = {
             firstName: document.getElementById("firstname").value,
             lastName: document.getElementById("lastname").value,
@@ -66,38 +66,42 @@ if (localStorage.getItem('panier') !== null) {
             city: document.getElementById("city").value,
             email: document.getElementById("email").value
         }
-
+        
         for (let ours of cart) {
             products.push(ours._id);
         }
-
+        
         let orderTeddies = JSON.stringify({
             contact, products
         });
-        (async () => {
 
-            const rawResponse = await fetch("http://localhost:3000/api/teddies/order", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                mode: 'cors',
-                body: orderTeddies
-            });
-            let content = await rawResponse.json();
-            localStorage.setItem('contact', JSON.stringify(content.contact));
-            localStorage.setItem('orderId', JSON.stringify(content.orderId));
-            localStorage.setItem('total', JSON.stringify(total));
-
-            // form.action = "confirmation.html";
-            // form.method = "POST";
-            window.location.href = 'confirmation.html';
-        })();
-
-
+        if (form.checkValidity() === true) {
+            debugger;
+            
+            (async () => {
+        
+                const rawResponse = await fetch("http://localhost:3000/api/teddies/order", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    mode: 'cors',
+                    body: orderTeddies
+                });
+                let content = await rawResponse.json();
+                if (rawResponse.status === 200 || rawResponse.status === 201) {
+                    localStorage.setItem('contact', JSON.stringify(content.contact));
+                    localStorage.setItem('orderId', JSON.stringify(content.orderId));
+                    localStorage.setItem('total', JSON.stringify(total));
+                    window.location.href = "confirmation.html";
+                }
+            })();
+           
+        }
     });
 
 } else {
+
 
     let emptyCart = document.createElement('h2');
     emptyCart.id = "panier-vide";
@@ -105,11 +109,7 @@ if (localStorage.getItem('panier') !== null) {
     emptyCart.innerText = "Votre panier est vide veuillez retourner à l'accueil. "
     yourCart.append(emptyCart);
 
-
-    purchaseBtn.addEventListener('click', function () {
-        alert("Votre panier est vide, vous serez redirigés vers l'accueil");
-        window.location.href = 'index.html';
-    });
+    informations.style.visibility = 'hidden';
 
 }
 
