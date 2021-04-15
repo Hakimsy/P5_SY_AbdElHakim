@@ -8,6 +8,7 @@ if (localStorage.getItem('panier') !== null) {
     let cart = JSON.parse(localStorage.getItem('panier'));
 
     let titre = document.createElement('h2');
+    titre.innerText = "Votre panier";
     titre.className = "panier-titre";
 
     let articles = document.createElement('div');

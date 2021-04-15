@@ -11,13 +11,14 @@ async function displayData() {
         leftDiv.classList.add('beardiv');
 
         let rightDiv = document.createElement('div');
-        rightDiv.classList.add('textcontainer');
+        rightDiv.classList.add('text-container');
 
         let image = document.createElement('img');
         image.classList.add('bearimg');
 
         let prixNom = document.createElement('div');
         let lienCont = document.createElement('div');
+        lienCont.classList.add('lienCont');
 
         let bearname = document.createElement('h2');
         let prix = document.createElement('h4');
