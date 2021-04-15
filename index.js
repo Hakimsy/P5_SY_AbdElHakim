@@ -14,7 +14,10 @@ async function displayData() {
         rightDiv.classList.add('textcontainer');
 
         let image = document.createElement('img');
-        image.classList.add('bearimg')
+        image.classList.add('bearimg');
+
+        let prixNom = document.createElement('div');
+        let lienCont = document.createElement('div');
 
         let bearname = document.createElement('h2');
         let prix = document.createElement('h4');
@@ -31,7 +34,9 @@ async function displayData() {
         main.append(cadre);
         cadre.append(leftDiv, rightDiv);
         leftDiv.append(image);
-        rightDiv.append(bearname, prix, lienprod);
+        rightDiv.append(prixNom, lienCont);
+        prixNom.append(bearname, prix)
+        lienCont.append(lienprod)
 
     }
 
