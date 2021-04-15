@@ -91,11 +91,11 @@ body {
         max-height: 100%;
     }
     .beardiv {
-        width: 100%;
+        width: 50%;
         height: 100%;
     }
     .text-container {
-        max-width: 100%;
+       width: 50%;
     }
 }
 
@@ -155,6 +155,7 @@ body {
     padding: 1em;
     height: 100%;
     width: 100%;
+    margin: auto;
     #nom-produit {
         text-align: center;
     }
@@ -319,6 +320,7 @@ textarea {
         .text-container {
             width: 100%;
             height: 50%;
+            padding: auto;
         }
     }
 

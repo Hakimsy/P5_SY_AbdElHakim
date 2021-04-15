@@ -132,12 +132,12 @@ body {
 }
 
 .minicontainer .beardiv {
-  width: 100%;
+  width: 50%;
   height: 100%;
 }
 
 .minicontainer .text-container {
-  max-width: 100%;
+  width: 50%;
 }
 
 .footer {
@@ -219,6 +219,7 @@ body {
   padding: 1em;
   height: 100%;
   width: 100%;
+  margin: auto;
 }
 
 .text-container #nom-produit {
@@ -403,6 +404,7 @@ textarea {
   .minicontainer .text-container {
     width: 100%;
     height: 50%;
+    padding: auto;
   }
   .main-container {
     display: -webkit-box;
