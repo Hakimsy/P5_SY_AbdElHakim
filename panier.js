@@ -59,6 +59,7 @@ if (localStorage.getItem('panier') !== null) {
     let products = [];
 
     purchaseBtn.addEventListener('click', function () {
+        debugger;
     
         let contact = {
             firstName: document.getElementById("firstname").value,
@@ -77,7 +78,6 @@ if (localStorage.getItem('panier') !== null) {
         });
 
         if (form.checkValidity() === true) {
-            debugger;
             
             (async () => {
         

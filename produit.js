@@ -43,7 +43,7 @@ async function productPage() {
         color: select.value,
       };
 
-      let otherItem = true;
+      let autreProduit = true;
 
       if (localStorage.getItem("panier") === null) {
         cart.push(product);
@@ -56,10 +56,10 @@ async function productPage() {
         for (let item of cart) {
           if (item._id === product._id && item.color === product.color) {
             item.quantity = product.quantity;
-            otherItem = false;
+            autreProduit = false;
           }
         }
-        if (otherItem) cart.push(product);
+        if (autreProduit) cart.push(product);
         localStorage.setItem("panier", JSON.stringify(cart));
         alert(
           `Vous avez ajouté ${product.quantity} "${product.name}" à votre panier`
