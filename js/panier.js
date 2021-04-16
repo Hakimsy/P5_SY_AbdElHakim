@@ -90,6 +90,8 @@ if (localStorage.getItem('panier') !== null) {
                     body: orderTeddies
                 });
                 let content = await rawResponse.json();
+                console.log(rawResponse.status);
+                console.log(rawResponse.statusText);
                 if (rawResponse.status === 200 || rawResponse.status === 201) {
                     localStorage.setItem('contact', JSON.stringify(content.contact));
                     localStorage.setItem('orderId', JSON.stringify(content.orderId));
