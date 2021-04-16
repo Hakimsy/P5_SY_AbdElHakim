@@ -49,7 +49,7 @@ body {
 }
 
 .header h1 {
-  font-family: 'Train One', cursive;
+  font-family: "Train One", cursive;
   font-weight: bold;
   color: purple;
 }
@@ -444,6 +444,9 @@ textarea {
             align-items: center;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+  }
+  .page-container {
+    height: auto;
   }
   .minicontainer {
     display: -webkit-box;
